@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-
+    private Animator anim;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask layer;
     [SerializeField] private float jumpForce;
@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            anim.SetTrigger("jump");
         }
     }
 
