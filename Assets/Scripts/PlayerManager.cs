@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     private Animator anim;
-    [SerializeField] private Text txtHp;
-    private int hpCurrent = 3;
     [SerializeField] private GameObject gameOver;
     private GameObject player;
 
@@ -18,10 +16,6 @@ public class PlayerManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
-    {
-        txtHp.text = "HP: " + hpCurrent;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,7 +24,8 @@ public class PlayerManager : MonoBehaviour
         {
             gameOver.SetActive(true);
             Destroy(player.gameObject);
-        }else if (collision.CompareTag("Trap"))
+        }
+/*        else if (collision.CompareTag("Trap"))
         {
             anim.SetTrigger("hit");
             hpCurrent -= 1;
@@ -40,6 +35,6 @@ public class PlayerManager : MonoBehaviour
                 gameOver.SetActive(true);
                 Destroy(player.gameObject);
             }
-        }
+        }*/
     }
 }
