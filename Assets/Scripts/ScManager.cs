@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class ScManager : MonoBehaviour
 {
     [SerializeField] private Button btn;
+    [SerializeField] private Button btnMenu;
+    [SerializeField] private Button btnCloseMenu;
+
+    [SerializeField] Image imgMenu;
 
     private void Start()
     {
@@ -15,6 +19,6 @@ public class ScManager : MonoBehaviour
 
     private void PlayerGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }

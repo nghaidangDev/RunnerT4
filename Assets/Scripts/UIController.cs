@@ -42,6 +42,6 @@ public class UIController : MonoBehaviour
 
     private void BtnMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
